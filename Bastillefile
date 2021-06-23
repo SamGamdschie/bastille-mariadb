@@ -1,0 +1,11 @@
+PKG mariadb105-server
+
+CP usr /
+CP root /
+
+SYSRC mysql_enable=YES
+
+SERVICE mysql-server start
+
+CMD /root/bootstrap-wp.sh
+
