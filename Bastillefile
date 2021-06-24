@@ -3,6 +3,8 @@ PKG mariadb105-server
 CP usr /
 CP root /
 
+FSTAB	fstab syntax	/host/path container/path nullfs ro 0 0
+
 SYSRC mysql_enable=YES
 
 SERVICE mysql-server start
