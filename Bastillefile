@@ -1,9 +1,10 @@
-PKG mariadb105-server
+PKG mariadb105-server automysqlbackup
 
 CP usr /
 CP root /
 
-FSTAB	fstab syntax	/host/path container/path nullfs ro 0 0
+FSTAB	/usr/ports /usr/jails/db/usr/ports nullfs ro 0 0 
+FSTAB /var/backup/automysql /werzel/automysql nullfs rw 0 0
 
 SYSRC mysql_enable=YES
 
