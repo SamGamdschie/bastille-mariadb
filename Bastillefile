@@ -3,8 +3,9 @@ PKG mariadb105-server automysqlbackup
 CP usr /
 CP root /
 
-FSTAB	/usr/ports /usr/jails/db/usr/ports nullfs ro 0 0 
-FSTAB /var/backup/automysql /werzel/automysql nullfs rw 0 0
+MOUNT /usr/ports usr/ports nullfs ro 0 0 
+MOUNT /werzel/automysql var/db/mysql  nullfs rw 0 0
+MOUNT /werzel/automysql var/backup/db  nullfs rw 0 0
 
 SYSRC mysql_enable=YES
 
