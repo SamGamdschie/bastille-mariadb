@@ -6,10 +6,10 @@ PKG mariadb105-server automysqlbackup
 MOUNT /usr/ports usr/ports nullfs ro 0 0 
 MOUNT /werzel/mariadb var/db/mysql  nullfs rw 0 0
 MOUNT /werzel/automysql var/backup/db  nullfs rw 0 0
+MOUNT /werzel/certificates www/certificates nullfs ro 0 0
+MOUNT /werzel/server_config/mysql usr/local/etc/mysql nullfs ro 0 0
 
 SYSRC mysql_enable=YES
 
 SERVICE mysql-server start
-
-#CMD /root/bootstrap-wp.sh
 
