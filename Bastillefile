@@ -2,17 +2,18 @@ ARG mariadb-version=105
 
 PKG mariadb${mariadb-version}-server
 
-#CP usr /
+CP usr /
 #CP root /
 
-CMD mkdir -p /usr/local/etc/git_config/mysql
+CMD mkdir -p /usr/local/etc/mysql
+CMD mkdr -p /www/certificates 
 
 MOUNT /usr/ports usr/ports nullfs ro 0 0 
 MOUNT /werzel/mariadb_data var/db/mysql  nullfs rw 0 0
 MOUNT /werzel/mariadb_log var/log/mysql  nullfs rw 0 0
 MOUNT /werzel/mariabd_backup var/backups/mariadb nullfs rw 0 0
 MOUNT /werzel/certificates www/certificates nullfs ro 0 0
-MOUNT /werzel/git/server_config/mysql usr/local/etc/git_configmysql nullfs ro 0 0
+MOUNT /werzel/git/server_config/mysql/mariadb.conf.d usr/local/etc/mysql/mariadb.conf.d nullfs ro 0 0
 
 CMD mariadb-scure-installation
 
