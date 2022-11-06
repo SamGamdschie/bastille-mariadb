@@ -6,7 +6,7 @@ CP usr /
 #CP root /
 
 CMD mkdir -p /usr/local/etc/mysql/mariadb.conf.d
-CMD mkdr -p /www/certificates 
+CMD mkdir -p /www/certificates 
 CMD mkdir -p /usr/local/etc/git_config/mysql
 
 MOUNT /usr/ports usr/ports nullfs ro 0 0 
