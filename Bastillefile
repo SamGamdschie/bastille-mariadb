@@ -21,9 +21,10 @@ MOUNT /werzel/server_config/mysql usr/local/etc/git_config/mysql nullfs ro 0 0
 CMD rm -rf /usr/local/etc/mysql/mariadb.conf.d/
 CMD ln -s /usr/local/etc/mysql/mariadb.conf.d /usr/local/etc/git_config/mysql/mariadb.conf.d
 
-CMD mariadb-scure-installation
-
 SYSRC mysql_enable=YES
 
 SERVICE mysql-server start
 
+# Manual Tasks
+#CMD /usr/local/bin/mariadb-secure-installation
+#CMD /usr/local/bin/maria_restore.sh
