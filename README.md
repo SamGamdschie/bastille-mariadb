@@ -8,8 +8,15 @@ This template can receive an argument: `mariadb-version` to specify another vers
 #### Example
 If you want MariaDB 10.1, you can use the template like this:
 
-```shell
+```sh
 bastille template TARGET SamGamdschie/bastille-mariadb --arg mariadb-version=101
 ```
 
 Note that the version must be available in FreeBSD packages (PKG).
+
+### Manual Tasks
+```sh
+bastille console xxx
+/usr/local/bin/mariadb-secure-installation
+ /usr/local/bin/maria_restore.sh
+```

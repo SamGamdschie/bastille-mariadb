@@ -24,7 +24,3 @@ CMD ln -s /usr/local/etc/mysql/mariadb.conf.d /usr/local/etc/git_config/mysql/ma
 SYSRC mysql_enable=YES
 
 SERVICE mysql-server start
-
-# Manual Tasks
-#CMD /usr/local/bin/mariadb-secure-installation
-#CMD /usr/local/bin/maria_restore.sh
