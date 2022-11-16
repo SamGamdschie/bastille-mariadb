@@ -16,7 +16,7 @@ Note that the version must be available in FreeBSD packages (PKG).
 
 ### Manual Tasks
 ```sh
-bastille console xxx
+bastille console db
 /usr/local/bin/mariadb-secure-installation
- /usr/local/bin/maria_restore.sh
+/usr/local/bin/maria_restore.sh
 ```
