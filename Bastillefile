@@ -1,6 +1,6 @@
 ARG mariadb-version=106
 
-PKG mariadb${mariadb-version}-server
+PKG zsh vim htop mariadb${mariadb-version}-server
 
 CP usr /
 #CP root /
