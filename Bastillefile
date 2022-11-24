@@ -1,4 +1,4 @@
-ARG zsh mariadb-version=106
+ARG mariadb-version=106
 
 PKG zsh htop mariadb${mariadb-version}-server
 
@@ -10,7 +10,6 @@ CMD mkdir -p /www/certificates
 CMD mkdir -p /usr/local/etc/git_config/mysql
 CMD mkdir -p /var/backups/mariadb
 
-MOUNT /usr/ports usr/ports nullfs ro 0 0 
 MOUNT /werzel/mariadb_data var/db/mysql  nullfs rw 0 0
 MOUNT /werzel/mariadb_log var/log/mysql  nullfs rw 0 0
 MOUNT /werzel/mariabd_backup var/backups/mariadb nullfs rw 0 0
