@@ -5,7 +5,6 @@ PKG zsh htop mariadb${mariadb-version}-server
 CP usr /
 #CP root /
 
-CMD mkdir -p /usr/local/etc/mysql/mariadb.conf.d
 CMD mkdir -p /www/certificates 
 CMD mkdir -p /usr/local/etc/git_config/mysql
 CMD mkdir -p /var/backups/mariadb
@@ -17,8 +16,8 @@ MOUNT /werzel/certificates www/certificates nullfs ro 0 0
 MOUNT /werzel/server_config/mysql usr/local/etc/git_config/mysql nullfs ro 0 0
 
 # Link Configurations to /usr/local/etc/ from /usr/local/etc/git_config/*/
-CMD rm -rf /usr/local/etc/mysql/mariadb.conf.d/
-CMD ln -s /usr/local/etc/mysql/mariadb.conf.d /usr/local/etc/git_config/mysql/mariadb.conf.d
+CMD ln -s /usr/local/etc/git_config/mysql/50-mysql-clients.cnf /usr/local/etc/mysql/conf.d/50-mysql-clients.cnf
+CMD ln -s /usr/local/etc/git_config/mysql/50-server.cnf /usr/local/etc/mysql/conf.d/50-server.cnf
 
 SYSRC mysql_enable=YES
 
