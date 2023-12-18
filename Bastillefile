@@ -15,10 +15,10 @@ MOUNT /werzel/mariadb_backup var/backups/mariadb  nullfs rw 0 0
 MOUNT /werzel/certificates www/certificates  nullfs ro 0 0
 MOUNT /werzel/server_config/mysql usr/local/etc/git_config/mysql  nullfs ro 0 0
 
-# Link Configurations to /usr/local/etc/ from /usr/local/etc/git_config/*/
-CMD ln -s /usr/local/etc/git_config/mysql/50-mysql-clients.cnf /usr/local/etc/mysql/conf.d/50-mysql-clients.cnf
-CMD ln -s /usr/local/etc/git_config/mysql/50-server.cnf /usr/local/etc/mysql/conf.d/50-server.cnf
-
 SYSRC mysql_enable=YES
 
 SERVICE mysql-server start
+
+# Link Configurations to /usr/local/etc/ from /usr/local/etc/git_config/*/
+CMD ln -s /usr/local/etc/git_config/mysql/50-mysql-clients.cnf /usr/local/etc/mysql/conf.d/50-mysql-clients.cnf
+CMD ln -s /usr/local/etc/git_config/mysql/50-server.cnf /usr/local/etc/mysql/conf.d/50-server.cnf
