@@ -1,4 +1,4 @@
-ARG mariadb-version=106
+ARG mariadb-version=1011
 
 PKG zsh htop mariadb${mariadb-version}-server
 
@@ -11,9 +11,9 @@ CMD mkdir -p /var/backups/mariadb
 
 MOUNT /werzel/mariadb_data var/db/mysql  nullfs rw 0 0
 MOUNT /werzel/mariadb_log var/log/mysql  nullfs rw 0 0
-MOUNT /werzel/mariabd_backup var/backups/mariadb nullfs rw 0 0
-MOUNT /werzel/certificates www/certificates nullfs ro 0 0
-MOUNT /werzel/server_config/mysql usr/local/etc/git_config/mysql nullfs ro 0 0
+MOUNT /werzel/mariadb_backup var/backups/mariadb  nullfs rw 0 0
+MOUNT /werzel/certificates www/certificates  nullfs ro 0 0
+MOUNT /werzel/server_config/mysql usr/local/etc/git_config/mysql  nullfs ro 0 0
 
 # Link Configurations to /usr/local/etc/ from /usr/local/etc/git_config/*/
 CMD ln -s /usr/local/etc/git_config/mysql/50-mysql-clients.cnf /usr/local/etc/mysql/conf.d/50-mysql-clients.cnf
